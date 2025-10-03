@@ -22,7 +22,7 @@ body {
 
     background-color: var(--bg);
     background-image: 
-      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E"),
           var(--bg-image); /* الخلفية الرئيسية */
           background-repeat: repeat, repeat;
           background-size: auto, cover;   /* الثانية تغطي الشاشة */

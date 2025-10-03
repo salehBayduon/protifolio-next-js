@@ -14,7 +14,7 @@ export default function Contact() {
         {/* Contact info cards */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <Link href={"tel:+966501234567"} className="block">
+        <a href={"tel:+963936577642"} className="block p-0">
           <div className="bg-[#0b1220]/75 hover:bg-[#0b1220] p-6 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105">
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#cc9a00] to-[#B87333] flex items-center justify-center text-white mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,7 +24,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
             <p className="text-white underline">+963 936 577 642</p>
           </div>
-        </Link>
+        </a>
 
         <Link href={"mailto:salehbayduon11@gmail.com"} className="block">
           <div className="bg-[#0b1220]/85 hover:bg-[#0b1220] p-6 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105">
