@@ -44,7 +44,7 @@ body {
      }
       
       .dark {
-        --bg: #0b1220;
+        --bg: #1a4f7e;
         --text: #e0f2ff;
         --accent:#ffc800;
         --bg-image: url('/bg-blue-dark.svg');       /* خلفية اللابتوب/ديسكتوب */
