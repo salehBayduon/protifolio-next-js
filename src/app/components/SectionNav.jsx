@@ -81,7 +81,7 @@ const SCROLL_THRESHOLD = 100;
 
   return (
     <div>
-      <nav className={` fixed p-3 top-0 left-0 w-full z-50 shadow-md  fixed top-0 left-0 w-full z-50 shadow-md bg-[var(--gradient)]/90 transition-transform duration-500' ${
+      <nav className={` fixed p-2 top-0 left-0 w-full z-50 shadow-md  fixed top-0 left-0 w-full z-50 shadow-md bg-[var(--gradient)]/90 transition-transform duration-500' ${
     showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
    style={{ background: "var(--gradient)" , opacity: 0.9 }}>
     <div className=" container flex items-center justify-between h-16 "   style={{
@@ -90,7 +90,8 @@ const SCROLL_THRESHOLD = 100;
   }}>
 
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-2xl font-bold tracking-wider text-[var(--text)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff]">Saleh's Portfolio</Link>
+            <Link href="/" className="hidden md:block md:text-2xl text-xl font-bold tracking-wider text-[var(--text)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff]">Saleh's Portfolio</Link>
+            <Link href="/" className="block md:hidden md:text-2xl text-xl font-bold tracking-wider text-[var(--text)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff]">Portfolio</Link>
           </div>
 
           <div className="hidden md:flex items-center gap-6 ">

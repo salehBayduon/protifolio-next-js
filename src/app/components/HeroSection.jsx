@@ -5,12 +5,12 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   return (
-    <section id='hero' className=" min-h-[125vh] md:min-h-[70vh] flex items-center animate-fadeIn text-[var(--text)] h-screen bg-cover bg-center ">
+    <section id='hero' className=" mt-12 md:min-h-[70vh] flex items-center animate-fadeIn text-[var(--text)] bg-cover bg-center ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
         <div>
           <h3 className="text-[var(--accent)] font-semibold text-3xl" style={{ animationDelay: '80ms' }}>Hi, I'm</h3>
-          <h1 className="text-xl md:text-2xl font-bold leading-tight mt-2 animate-slideUp" style={{ animationDelay: '160ms' }}>
+          <h1 className="text-xl md:text-xl font-bold leading-tight mt-2 animate-slideUp" style={{ animationDelay: '160ms' }}>
             <TypeAnimation
               sequence={[
                 'Saleh Bayduon ..',
