@@ -50,7 +50,7 @@ export default function Contact() {
         </div>
         <footer className="border-t border-[var(--border)] mt-20 py-6 font-medium ">
       <div className="container flex flex-col  md:flex-row items-center justify-between text-xl text-[var(--text-muted)] gap-4">
-        <p className='text-[var(--text)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff]'>         Saleh Bayduon</p>
+        <p className='text-[var(--text-muted)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff]'>         Saleh Bayduon</p>
         <div className=" md:ml-12 flex items-center gap-4">
         <a href="https://github.com/salehBayduon" aria-label="GitHub" className="text-[var(--text-muted)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff] hover:text-[var(--accent)]">GitHub</a>
                   <a href="https://www.facebook.com/saleh.baydoun.1" aria-label="Facebook" className="text-[var(--text-muted)] drop-shadow-[0_0_5px_#ffffff] drop-shadow-[0_0_10px_#ffffff] drop-shadow-[0_0_20px_#ffffff] drop-shadow-[0_0_40px_#ffffff] hover:text-[var(--accent)]">Facebook</a>
