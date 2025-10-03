@@ -1,26 +1,99 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+html {
+  scroll-behavior: smooth;
+}
+html, body, #__next {
+  height: 100%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   }
-}
+  
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg); color: var(--text);
+
+    background-color: var(--bg);
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E"),
+          var(--bg-image); /* الخلفية الرئيسية */
+          background-repeat: repeat, repeat;
+          background-size: auto, cover;   /* الثانية تغطي الشاشة */
+          background-position: left top, center center;
+          background-attachment: scroll, scroll;
+      }
+      
+
+
+      :root {
+        --bg: #e0f2ff; 
+        --text: #0b1220;
+        --accent: #ffc800;
+        --bg-image: url('/bg-blue-white.svg');       /* خلفية اللابتوب/ديسكتوب */
+        --bg-image-mobile: url('/white-mobile.svg'); /* خلفية الموبايل */
+        --gradient: linear-gradient(135deg,#2775b4b2, #ffffff6d );
+        --toggle-border: #2775b4; /* أزرق هادي للوضع الفاتح */
+        --toggle-glow: 0 0 8px #4da9ff;
+     }
+      
+      .dark {
+        --bg: #0b1220;
+        --text: #e0f2ff;
+        --accent:#ffc800;
+        --bg-image: url('/bg-blue-dark.svg');       /* خلفية اللابتوب/ديسكتوب */
+        --bg-image-mobile: url('/dark-mobile.svg'); /* خلفية الموبايل */
+        --gradient: linear-gradient(135deg, #0000006a, #07076766);
+        --toggle-border: #000000; /* أصفر ذهبي للوضع الداكن */
+        --toggle-glow: 0 0 10px #000000;/* لون الإطار في الوضع الدارك */
+      }
+      
+/* Mobile keeper مخفي بالافتراضي */
+.bg-mobile-keeper {
+  display: none;
+}
+
+#content:target {
+  animation: pulseHighlight 1s ease;
+}
+
+@keyframes pulseHighlight {
+  0%   { background-color: #00cd37; }
+  100% { background-color: transparent; }
+}
+  
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes slideUp { from { transform: translateY(10px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+  @keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-6px) } 100% { transform: translateY(0) } }
+  
+  
+  @layer utilities {
+  .animate-fadeIn { animation: fadeIn 700ms ease both }
+  .animate-slideUp { animation: slideUp 700ms cubic-bezier(.22,.9,.2,1) both }
+  .animate-float { animation: float 3s ease-in-out infinite }
+  
+  
+  .scrollbar-thin::-webkit-scrollbar { height: 8px; width: 8px }
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb{ border-radius: 9999px }
+  }
+  
+  
+  @media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn, .animate-slideUp, .animate-float { animation: none !important }
+  }
+
+/* موبايل: استبدال الخلفيات بالطولية */
+@media (max-width: 768px) {
+  :root {
+    --bg-image: url('/white-mobile.svg');
+  }
+  .dark {
+    --bg-image: url('/dark-mobile.svg');
+  }
 }

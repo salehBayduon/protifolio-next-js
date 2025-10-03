@@ -1,0 +1,255 @@
+:root {
+    --bg: #e0f2ff; 
+    --text: #0b1220;
+    --accent: #ffc800;
+    --bg-image: url('/bg-blue-white.svg');
+    --gradient: linear-gradient(135deg,#2775b4b2, #ffffff6d );
+    --toggle-border: #2775b4; /* أزرق هادي للوضع الفاتح */
+    --toggle-glow: 0 0 8px #2775b4;
+ }
+  
+  .dark {
+    --bg: #0b1220;
+    --text: #e0f2ff;
+    --accent:#ffc800;
+    --bg-image: url('/bg-blue-dark.svg');
+    --gradient: linear-gradient(135deg, #0000006a, #07076766);
+    --toggle-border: #2775b4; /* أصفر ذهبي للوضع الداكن */
+    --toggle-glow: 0 0 10px #2775b4;/* لون الإطار في الوضع الدارك */
+  }
+  
+
+  .theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 0.8rem; /* أقل مسافة من اليمين */
+    --toggle-sun: #ffc800;
+    --toggle-moon: #afafaf;
+    --toggle-bg: #5581b1;
+    --toggle-outer-dark: #101010;
+    --toggle-spot-dark: #9b9a9a;
+    --transition-fast: 0.3s;
+    --transition-main: 0.6s;
+    margin-top: 8px;
+}
+
+/* العنوان */
+.theme-toggle .title {
+    position: relative;
+    text-align: center;
+    width: 90px; /* أقل عرض */
+    margin: 0;
+    font-size: 0.75rem; /* أصغر */
+}
+.theme-toggle .title h1 {
+    margin: 0;
+    width: 100%;
+    transition: opacity 0.3s ease-in;
+    color: inherit;
+}
+.theme-toggle .title h1:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.theme-toggle.dark .title h1:nth-of-type(1) { opacity: 0; }
+.theme-toggle.dark .title h1:nth-of-type(2) { opacity: 1; }
+
+/* Outer Border أصغر */
+.theme-toggle .outerBorder {
+    width: 90px;
+    height: 36px;
+    border-radius: 18px;
+    padding: 2px;
+    transition: all 0.5s ease;
+    margin: 18px 0;
+    transform: scale(1);
+    border: 2px solid var(--toggle-border);
+    box-shadow: var(--toggle-glow); /* ✨ الوهج */
+    transition: all 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+/* Toggle Outer */
+.theme-toggle .toggle-outer {
+    cursor: pointer;
+    right: 2px;
+    top: -2px;
+    width: 87px;
+    height: 33px;
+    color: var(--text-root);
+    border-radius: 16px;
+    background: var(--toggle-bg);
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transition-fast) ease;
+}
+
+/* إزالة الإطار الأزرق عند التركيز */
+.theme-toggle .toggle-outer:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Knob أصغر */
+.theme-toggle #center {
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    height: 24px;
+    width: 24px;
+    z-index: 20;
+}
+.theme-toggle .toggle-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--toggle-sun);
+    transition: background 0.3s linear,
+                transform var(--transition-main) cubic-bezier(0.11,0.71,0.74,1.15);
+}
+.theme-toggle.outer-active .toggle-inner {
+    background: var(--toggle-moon);
+}
+.theme-toggle .toggle-inner-overlay { width:100%; height:100%; border-radius:100%; }
+
+/* Spots */
+.theme-toggle .spot1 {
+    position: absolute;
+    top: -30px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: transparent;
+}
+.theme-toggle .spot2 {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 2.5px;
+    height: 2.5px;
+    border-radius: 50%;
+    background: transparent;
+}
+.theme-toggle .spot3 {
+    position: absolute;
+    top: 13px;
+    left: 14px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.theme-toggle .toggle-inner {
+    background: var(--toggle-sun); /* الشمس */
+  }
+  
+  .theme-toggle .outer-active .toggle-inner {
+    background: var(--toggle-moon); /* القمر */
+
+    }
+
+.theme-toggle.outer-active .spot1,
+.theme-toggle.outer-active .spot2,
+.theme-toggle.outer-active .spot3 {
+    background: var(--toggle-spot-dark);
+    transition: background 0.45s ease-out 0.45s;
+}
+
+/* Animations عند التفعيل */
+.theme-toggle .outer-active .toggle-inner,
+.theme-toggle .outer-active .halo1,
+.theme-toggle .outer-active .halo2,
+.theme-toggle .outer-active .halo3 {
+    transform: translateX(50px); /* أقل بسبب الحجم الأصغر */
+}
+
+/* Clouds & Stars */
+.theme-toggle .clouds {
+    position: absolute;
+    top: -12px;      /* قريب من الـ knob */
+    left: 2px;     /* قريب من الزاوية */
+    width: 20px;   /* حجم مناسب بالنسبة للزر */
+    height: 8px;
+    z-index: 10;
+    background: url('/cloud.svg') no-repeat; /* لو SVG أو صورة */
+    background-size: contain;
+    transition: all 0.4s ease;
+}
+
+.theme-toggle .clouds-active {
+    transform: translateY(25px); /* تحرك أسفل الزر عند التفعيل */
+}
+.theme-toggle .stars {
+    position: absolute;
+    top: -6px;       /* قريب من knob */
+    right: 120px;     /* على اليمين */
+    width: 0px;    /* حجم مناسب */
+    height: 14px;
+    z-index: 5;
+    background: url('/stars.svg') no-repeat; /* لو SVG أو صورة */
+    background-size: contain;
+    transform: translateY(-30px); /* يكون مخفي قليلاً في البداية */
+    transition: all 0.5s ease;
+} .theme-toggle .outer-active .stars { transform: translateY(-2px); } 
+ .theme-toggle .outer-active { background: var(--toggle-outer-dark); }
+ .theme-toggle.dark .stars,
+.theme-toggle .outer-active .stars {
+    transform: translateY(2px);
+}
+/* Halos */
+.theme-toggle .halo1, .theme-toggle .halo2, .theme-toggle .halo3 {
+    position:absolute; 
+    border-radius:50%; 
+    background: rgba(255,255,255,0.08); 
+    pointer-events:none;
+}
+.theme-toggle .halo1 { z-index:4; top:-16px; left:-16px; width:calc(100% + 32px); height:calc(100% + 32px); }
+.theme-toggle .halo2 { z-index:3; top:-28px; left:-28px; width:calc(100% + 56px); height:calc(100% + 56px); }
+.theme-toggle .halo3 { z-index:2; top:-40px; left:-40px; width:calc(100% + 80px); height:calc(100% + 80px); }
+
+.theme-toggle .clouds {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  /* When clouds-active is applied (your JS sets this on LIGHT), show them.
+     Also ensure that when the wrapper is NOT .dark we show clouds as fallback. */
+  .theme-toggle .clouds.clouds-active,
+  .theme-toggle:not(.dark) .clouds {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* If wrapper is dark, always hide clouds (override any earlier rule) */
+  .theme-toggle.dark .clouds {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  /* ===== Override: make stars hidden in LIGHT and visible only in DARK ===== */
+  
+  /* Base: hide stars by default */
+  .theme-toggle .stars {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* Show stars when wrapper has .dark OR when JS explicitly added .visible (defensive) */
+  .theme-toggle.dark .stars,
+  .theme-toggle .stars.visible {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  
+  /* Ensure in non-dark state stars remain hidden (stronger selector) */
+  .theme-toggle:not(.dark) .stars {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  
