@@ -17,7 +17,7 @@ export default function ProjectCard({ project }) {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
       <Link href={url} aria-label={`Open ${title}`} className="block">
-        <div className="relative w-full h-50 md:h-50 ">
+        <div className="relative  w-full h-50 md:h-50 ">
           <Image
             src={img}
             alt={title}
@@ -28,7 +28,7 @@ export default function ProjectCard({ project }) {
           />
         </div>
 
-        <div className="p-4">
+        <div className="p-4 bg-gray-800/40">
           <h3 id={`project-${id}-title`} className={project.desc === "Service is currently unavailable" ? "text-red-500 font-semibold text-lg " : " text-white"}>
             {title}
           </h3>
