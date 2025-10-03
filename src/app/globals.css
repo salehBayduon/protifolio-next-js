@@ -63,11 +63,7 @@ body {
   animation: pulseHighlight 1s ease;
 }
 
-@keyframes pulseHighlight {
-  0%   { background-color: #00cd37; }
-  100% { background-color: transparent; }
-}
-  
+
   @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
   @keyframes slideUp { from { transform: translateY(10px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
   @keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-6px) } 100% { transform: translateY(0) } }
@@ -91,9 +87,9 @@ body {
 /* موبايل: استبدال الخلفيات بالطولية */
 @media (max-width: 768px) {
   :root {
-    --bg-image: url('/white-mobile.svg');
+    --bg-image: #e0f2ff;
   }
   .dark {
-    --bg-image: url('/dark-mobile.svg');
+    --bg-image: #1a4f7e;
   }
 }
