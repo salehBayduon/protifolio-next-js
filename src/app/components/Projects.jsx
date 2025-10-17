@@ -22,7 +22,7 @@ const item = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="container py-12 text-[var(--text)]">
+    <section id="projects" data-aos="fade-up" data-aos-delay="200" className="container py-12 text-[var(--text)]">
       <SectionHeader title="Projects" subtitle="Selected projects — interactive, responsive, and production-ready." />
 
       <motion.div

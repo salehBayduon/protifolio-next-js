@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   return (
+
     <section id='hero' className=" mt-12 md:min-h-[70vh] flex items-center animate-fadeIn text-[var(--text)] bg-cover bg-center ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 

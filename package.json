@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "framer-motion": "^12.23.22",
     "next": "15.5.3",
     "next-on-netlify": "^3.0.1",

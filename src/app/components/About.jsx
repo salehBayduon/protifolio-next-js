@@ -30,9 +30,9 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className=" bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+    <section id="about"  className=" bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div  data-aos="fade-up" data-aos-delay="200" className="flex flex-col md:flex-row gap-10 items-start">
           {/* Left - Image + badges */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -41,7 +41,7 @@ export default function AboutSection() {
             className="w-full md:w-1/3 flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:scale-105"
           >
             {/* Replace with next/image or img tag pointing to user's avatar */}
-            <div className="relative md:w-64 md:h-72 w-40 h-40 rounded-2xl overflow-hidden shadow-lg ring-1 ring-gray-200 dark:ring-gray-700">
+            <div data-aos="fade-right" data-aos-delay="500" className="relative md:w-64 md:h-72 w-40 h-40 rounded-2xl overflow-hidden shadow-lg ring-1 ring-gray-200 dark:ring-gray-700">
               <img
                 alt="avatar"
                 src="/99.jpg"
@@ -80,7 +80,7 @@ export default function AboutSection() {
               </div>
 
               {/* Skills card grid */}
-              <div className="grid grid-cols-2 gap-3 ">
+              <div data-aos="fade-left" data-aos-delay="500" className="grid grid-cols-2 gap-3 ">
                 {[
                   { label: 'C++ & C#' },
                   { label: 'HTML & CSS ' },
@@ -101,8 +101,8 @@ export default function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div className="mt-8 bg-gradient-to-r from-white/40 to-gray-50 dark:from-gray-900/40 dark:to-gray-800/40 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
+            <div data-aos="fade-up" data-aos-delay="500" className="mt-8 bg-gradient-to-r from-white/40 to-gray-50 dark:from-gray-900/40 dark:to-gray-800/40 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-1">
                 {stats.map((s, i) => (
                   <div key={s.id} className="text-center">
                     <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-[#cc9a00]">

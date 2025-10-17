@@ -124,13 +124,13 @@ const SCROLL_THRESHOLD = 100;
       <AnimatePresence>
         {drawerOpen && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }} className="fixed inset-0 z-50">
-            <div className="absolute inset-0 bg-[var(--bg)]/80 " onClick={() => setDrawerOpen(false)} />
+            <div className=" inset-0 bg-[var(--bg)]/80 " onClick={() => setDrawerOpen(false)} />
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.28 }}
-              className="absolute right-0 top-0 bottom-0 w-1/3 md:w-1/3 bg-[var(--bg-card)] p-6 shadow-2xl flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-1/2 md:w-1/3 bg-[var(--bg-card)] p-6 shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between mb-6 ">
                 <div className="text-xl font-bold text-[var(--text)]">Menu</div>

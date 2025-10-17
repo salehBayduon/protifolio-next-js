@@ -2,6 +2,7 @@ import './globals.css'
 import SectionNav from './components/SectionNav'
 import CursorShadow from './components/CursorShadow'
 import localFont from "next/font/local";
+import AOSWrapper from './components/AOSWarpper';
 
 
 const myFont = localFont({
@@ -20,6 +21,7 @@ return (
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 
 <body className={myFont.className}>
+    <AOSWrapper>
 <CursorShadow/>
 <div className='relative min-h-screen'>
 <div className=' inset-0 bg-black/20 z-0' >
@@ -27,6 +29,7 @@ return (
 <main className="pt-20 relative z-20 ">{children}</main>
 </div>
 </div>
+</AOSWrapper>
 </body>
 </html>
 )
